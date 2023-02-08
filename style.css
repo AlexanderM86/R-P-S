@@ -14,3 +14,6 @@ button:hover {
     cursor: pointer;
 
 }
+.reset {
+    display: none;
+}
