@@ -3,19 +3,37 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Rock Paper Scissorrs</title>
+        <title>Rock Paper Scissorrs with UI</title>
         <link rel="stylesheet" href="style.css">
     </head>
 
     <body>
-        <div class="flex-container">
-            <h1>Rock Paper Scissors</h1>
-            <button onclick="game()">Start Game</button>
-            <p>
-                The Ultimate showdown of Man vs Machine. On windows/linux press CTRL ALT T 
-                to open the consoole. On Mac, press Option J to open console.
-            </p>
+        <div class="score">
+            <h1 class ="ties">Ties: 0</h1>
         </div>
+        <div class="winnerDiv">
+            <h1 class="winner"></h1>
+            <button class="reset" onclick="resetGame()">Play Again?</button>
+        </div>
+        <div class="playerSection">
+        <h3 class="playerChoice"></h3>
+        <h3 class="playerScore">Score: 0</h3>
+            <div class="playerImgs">
+                <img src="./Images/rock.png" alt="Rock" class="pImg" id="rock">
+                <img src="./Images/paper.png" alt="Paper" class="pIMG" id="paper">
+                <img src="./Images/scissors.png" alt="Scissors" class="pIMG" id="scissors">
+            </div>
+        </div>
+    </div>
+    <div class="computerSection">
+    <h3 class="computerChoice"></h3>
+    <h3 class="computerScore">Score: 0</h3>
+        <div class="playerImgs">
+            <img src="./Images/rock.png" alt="Rock" class="rock">
+            <img src="./Images/paper.png" alt="Paper" class="paper">
+            <img src="./Images/scissors.png" alt="Scissors" class="scissors">
+        </div>
+    </div>
     </body>
     <script src="main.js"></script>
 </html>
