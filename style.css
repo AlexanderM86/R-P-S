@@ -54,4 +54,23 @@ img {
 
 .reset {
     display: none;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 60px;
+    background-color: rgba(0, 255, 255, 0.507);
+    color: black;
+    font-size: x-large;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.reset:hover {
+    cursor: pointer;
+}
+
+.winnerDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
