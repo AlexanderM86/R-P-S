@@ -92,7 +92,15 @@ function tallyWins() {
 
 function computerSelect() {
     //todo - update the dom with the computer selection
-    return choices[Math.floor(Math.random() * choices.length)];
+    const choice = choices[Math.floor(Math.random() * choices.length)]
+
+    document.querySelector(`.${choice}`).classList.add("active");
+
+    setTimeout(() => {
+        document.querySelector(`.${choice}`).classList.remove("active")
+    }, 700);
+
+    return choice;
 }
 
 function checkWins(){
