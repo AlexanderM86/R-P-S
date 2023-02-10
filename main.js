@@ -3,7 +3,15 @@ const choices = ["rock","paper","scissors"]
 
 
 function resetGame() {
-    //rest game
+    winners = []
+    document.querySelector(".playerScore").textContent = "Score : 0"
+    document.querySelector(".computerScore").textContent = "Score : 0"
+    document.querySelector(".ties").textContent = "Ties : 0"
+    document.querySelector(".winner").textContent = "";
+    document.querySelector(".playerChoice").textContent = "";
+    document.querySelector(".computerChoice").textContent = "";
+    document.querySelector(".reset").style.display = "none";
+    
 }
 
 function startGame() {
@@ -23,11 +31,8 @@ function playround(playerChoice) {
     if(wins >= 5){
         return
     }
-
-   const computerChoice = computerSelect();
-
+    const computerChoice = computerSelect();
     const winner = checkWinner(playerChoice,computerChoice);
-
     winners.push(winner);
     tallyWins();
     displayRound(playerChoice, computerChoice, winner);
@@ -65,13 +70,24 @@ function displayRound(playerChoice, computerChoice, winner){
     document.querySelector(".winner").textContent = `Round Winner: ${winner}`;
 }
 
+function displayRoundWinner(winner) {
+    if (winner == "Player") {
+        document.querySelector(".winner").textContent = "You won the round!";
+    } else if (winner == "Computer") {
+        document.querySelector(".winner").textContent = 
+        "The Computer won the round!";
+    } else {
+        document.querySelector(".winner").textContent = "The round was a tie!";
+    }
+}
+
 function tallyWins() {
     const pWinCount = winners.filter((item) => item == "Player").length;
     const cWinCount = winners.filter((item) => item == "Computer").length;
     const ties = winners.filter((item) =>item == "Tie").length;
     document.querySelector(".playerScore").textContent = `Score: ${pWinCount}`;
     document.querySelector(".computerScore").textContent = `Score: ${cWinCount}`;
-    document.querySelector("ties").textContent = `Score: ${ties}`;
+    document.querySelector(".ties").textContent = `Score: ${ties}`;
 }
 
 function computerSelect() {
